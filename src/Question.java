@@ -2,13 +2,14 @@ public class Question {
 
     public String[] question = new String[10];
     public int[] response = new int[10];
-    public String[] result = new String[5];
+    public String[] result = new String[7];
     public String name;
 
     public Question(String name) {
         this.name = name;
         makeQuestions();
         produceResult();
+        addUpResponses();
 
     }
 
@@ -33,6 +34,8 @@ public class Question {
         result[2] = "You will live to be 70 years old";
         result[3] = "Please consider your life decisions. You will live to be 50";
         result[4] = "How are you not dead!!";
+        result[5] = "Sorry, you entered a value greater than 4";
+        result[6] = "Sorry, you entered a value lower than 1";
     }
 
     public String addUpResponses() {
@@ -42,7 +45,9 @@ public class Question {
             boi += response[i];
         }
 
-
+        if(boi < 10){
+            return result[6];
+        }
 
         if(boi == 10){
             return result[0];
@@ -51,13 +56,16 @@ public class Question {
            return result[1];
         }
         if( boi > 20 && boi <= 30){
-            //System.out.println(result[2]);
+            return result[2];
         }
         if( boi> 30 && boi < 40){
-            //System.out.println(result[3]);
+            return result[3];
         }
         if( boi == 40){
-            //System.out.println(result[4]);
+            return result[4];
+        }
+        if( boi > 40){
+            return result[5];
         }
         return "";
     }

@@ -16,11 +16,6 @@ public class Runner {
         Question q = new Question(name);
 
 
-        //doesn't work
-        if (name.length() == 0) {
-            System.out.println("Put In Your Name Stoooopid!!");
-        }
-
         for (int i = 0; i < q.question.length; i++) {
             boolean isValid = false;
             System.out.println(q.question[i]);
@@ -39,7 +34,7 @@ public class Runner {
             }
         }
 
-        System.out.println("Life expectancy score of: " + q.addUpResponses());
+        System.out.println("Life expectancy Rating: " + q.addUpResponses());
 
     }
 }
